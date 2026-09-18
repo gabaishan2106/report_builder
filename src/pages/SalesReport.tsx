@@ -100,8 +100,8 @@ export default function SalesReport() {
         <button
           type="button"
           className="sales-report-download-raw"
-          onClick={() => downloadRawData(currentRows, periodLabel)}
-          disabled={currentRows.length === 0}
+          onClick={() => downloadRawData(currentRows, previousRows, periodLabel)}
+          disabled={currentRows.length === 0 && previousRows.length === 0}
         >
           Download Raw Data
         </button>
