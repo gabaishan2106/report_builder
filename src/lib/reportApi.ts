@@ -28,6 +28,7 @@ export async function fetchSalesRows(monthLabels: string[]): Promise<SalesRow[]>
       .from('sales_data')
       .select('*')
       .in('month', monthLabels)
+      .order('id', { ascending: true })
       .range(from, to)
 
     if (error) {
