@@ -20,9 +20,17 @@ function escapeCsvValue(value: unknown): string {
   return str
 }
 
-/** Downloads unaggregated sales_data rows for the selected period (RLS-scoped already). */
-export function downloadRawData(rows: SalesRow[], periodLabel: string) {
-  if (rows.length === 0) return
+/**
+ * Downloads unaggregated sales_data rows for BOTH the selected current period
+ * and its comparison period (RLS-scoped already), tagged with a "period"
+ * column so the two are distinguishable in the exported file.
+ */
+export function downloadRawData(
+  currentRows: SalesRow[],
+  previousRows: SalesRow[],
+  periodLabel: string
+) {
+  if (currentRows.length === 0 && previousRows.length === 0) return
 
   const columns: (keyof SalesRow)[] = [
     'seller_code', 'seller_name', 'buyer_name', 'buyer_code',
@@ -31,12 +39,16 @@ export function downloadRawData(rows: SalesRow[], periodLabel: string) {
     'group_name', 'category', 'top_25', 'club',
   ]
 
-  const header = columns.join(',')
-  const lines = rows.map((row) =>
-    columns.map((col) => escapeCsvValue(row[col])).join(',')
+  const header = ['period', ...columns].join(',')
+
+  const currentLines = currentRows.map((row) =>
+    ['current', ...columns.map((col) => escapeCsvValue(row[col]))].join(',')
+  )
+  const previousLines = previousRows.map((row) =>
+    ['comparison', ...columns.map((col) => escapeCsvValue(row[col]))].join(',')
   )
 
-  const csv = [header, ...lines].join('\n')
+  const csv = [header, ...currentLines, ...previousLines].join('\n')
   triggerDownload(csv, `sales_data_raw_${periodLabel}.csv`)
 }
 
