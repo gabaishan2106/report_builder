@@ -1,0 +1,43 @@
+:root {
+  /* Color */
+  --color-primary-teal: #008C83;
+  --color-dark-teal: #006B64;
+  --color-dark-navy: #142B49;
+  --color-gray: #64748B;
+  --color-bg: #F7F9FA;
+  --color-card: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-positive: #16803C;
+  --color-negative: #D92D20;
+  --color-warning: #D97706;
+
+  /* Type */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --content-max-width: 1320px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-dark-navy);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-teal);
+  outline-offset: 2px;
+}

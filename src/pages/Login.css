@@ -1,0 +1,141 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.login-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-teal);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.login-brand-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.login-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--color-dark-navy);
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: var(--color-gray);
+  margin: 0 0 28px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-dark-navy);
+  margin-bottom: 6px;
+}
+
+.login-input {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: var(--color-dark-navy);
+  background: #fff;
+}
+
+.login-input:focus {
+  border-color: var(--color-primary-teal);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 140, 131, 0.12);
+}
+
+.login-button {
+  background: var(--color-primary-teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  background: var(--color-dark-teal);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-link-button {
+  background: none;
+  border: none;
+  color: var(--color-primary-teal);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 16px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.login-link-button:hover {
+  text-decoration: underline;
+}
+
+.login-error {
+  background: #FEF2F1;
+  border: 1px solid rgba(217, 45, 32, 0.25);
+  color: var(--color-negative);
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 18px;
+}
+
+.login-success {
+  background: #F0FBF5;
+  border: 1px solid rgba(22, 128, 60, 0.25);
+  color: var(--color-positive);
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
