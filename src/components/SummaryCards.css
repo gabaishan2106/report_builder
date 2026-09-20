@@ -1,0 +1,104 @@
+.summary-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  margin: 32px 0 16px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.summary-card {
+  position: relative;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.summary-card-total {
+  border-color: var(--color-primary-teal);
+  margin-bottom: 8px;
+  max-width: 340px;
+}
+
+.pan-india-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-dark-teal);
+  background: rgba(0, 140, 131, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.summary-card-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-gray);
+  margin: 6px 70px 8px 0;
+}
+
+.summary-card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  margin-bottom: 10px;
+}
+
+.summary-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.summary-card-vs {
+  font-size: 12px;
+  color: var(--color-gray);
+}
+
+.growth-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.growth-up {
+  color: var(--color-positive);
+  background: rgba(22, 128, 60, 0.08);
+}
+
+.growth-down {
+  color: var(--color-negative);
+  background: rgba(217, 45, 32, 0.08);
+}
+
+.growth-flat {
+  color: var(--color-gray);
+  background: rgba(100, 116, 139, 0.08);
+}
+
+.growth-new {
+  color: var(--color-warning);
+  background: rgba(217, 119, 6, 0.08);
+}
